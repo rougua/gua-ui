@@ -4,6 +4,7 @@
   "description": "一个使用 Vue 编写的 UI 框架, 风格参照 antdesign",
   "main": "index.js",
   "scripts": {
+    "start": "npx parcel index.html --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
