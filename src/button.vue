@@ -1,34 +1,129 @@
 <template>
-  <button class="g-button">hi</button>
+  <button class="g-button">
+    <svg v-if="icon" class="icon">
+      <use :xlink:href="`#icon-${icon}`"></use>
+    </svg>
+    <slot></slot>
+  </button>
 </template>
 
 <script>
   export default {
-    name: 'GuaUIButton'
+    name: 'GuaUIButton',
+    props: ['icon']
   }
 </script>
 
 <style lang="scss" scoped>
+  $font-size: 12px;
+  $font-size-l: 14px;
+  $font-size-ll: 16px;
+
+  $button-border-radius: 14px;
+  $button-border-radius-l: 16px;
+  $button-border-radius-s: 11px;
+
+  $button-height: 30px;
+
+  $button-color: #666;
+  $button-background-color: #f4f4f4;
+  $button-border-color: #d9d9d9;
+  $button-hover-color: #57c5f7;
+  $button-hover-background-color: white;
+  $button-hover-border-color: #57c5f7;
+  $button-active-color: #2baee9;
+  $button-active-background-color: white;
+  $button-active-border-color: #2baee9;
+
+  $primary-button-color: white;
+  $primary-button-background-color: #2db7f5;
+  $primary-button-border-color: #2db7f5;
+  $primary-button-hover-color: white;
+  $primary-button-hover-background-color: #57c5f7;
+  $primary-button-hover-border-color: #57c5f7;
+
+  $primary-button-active-color: #f2f2f2;
+  $primary-button-active-background-color: #2baee9;
+  $primary-button-active-border-color: #2baee9;
+
   .g-button {
-    font-size: var(--font-size);
-    height: var(--button-height);
-    padding: 0 1em;
-    font: inherit;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    background: var(--button-bg);
+    box-sizing: border-box;
+    transition: .3s cubic-bezier(.645, .045, .355, 1);
+    &, &:active, &:focus {
+      outline: none;
+    }
+    font-size: var(--font-size); cursor: pointer; padding: 3px 12px;
+    line-height: 1.5; font: inherit; border-radius: $button-border-radius;
+    color: $button-color; border: 1px solid $button-border-color; background: $button-background-color;
+    text-align: center; vertical-align: middle;
+    &.circle {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    &.lg {
+      &.circle {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        font-size: $font-size-ll;
+      }
+      padding: 4px 15px 5px 15px;
+      font-size: $font-size-l;
+      border-radius: $button-border-radius-l;
+    }
+    &.sm {
+      &.circle {
+        width: 22px;
+        height: 22px;
+        padding: 0;
+      }
+      padding: 1px 7px;
+      border-radius: $button-border-radius-s;
+    }
+
+    &.primary {
+      color: $primary-button-color;
+      border-color: $primary-button-border-color;
+      background: $primary-button-background-color;
+      svg { fill: white; }
+      &:hover {
+        color: $primary-button-hover-color;
+        border-color: $primary-button-hover-border-color;
+        background: $primary-button-hover-background-color;
+      }
+      &:active {
+        color: $primary-button-active-color;
+        border-color: $primary-button-active-border-color;
+        background: $primary-button-active-background-color;
+      }
+    }
+
+    &.ghost {
+      svg { fill: $button-color; }
+      color: $button-color;
+      border-color: $button-border-color;
+      background: white;
+    }
 
     &:hover {
-      border-color: var(--border-color-hover);
+      svg { fill: $button-hover-color; }
+      color: $button-hover-color; border: 1px solid $button-hover-border-color; background: $button-hover-background-color;
     }
 
     &:active {
-      background-color: var(--button-active-bg);
+      svg { fill: $button-active-color; }
+      color: $button-active-color;
+      border: 1px solid $button-active-border-color;
+      background: $button-active-background-color;
     }
-
-    &:focus {
-      outline: none;
+    &.disabled, &.primary.disabled {
+      color: #ccc;
+      background-color: #f3f5f7;
+      border-color: #d9d9d9;
+      cursor: not-allowed;
     }
   }
-
 </style>

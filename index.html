@@ -13,22 +13,197 @@
     }
 
     :root {
-      --button-height: 32px;
-      --button-bg: white;
+      --font-size: 12px;
       --button-active-bg: #eee;
-      --font-size: 14px;
-      --border-radius: 4px;
       --color: #999;
-      --border-color: #999;
       --border-color-hover: #666;
+    }
+  </style>
+  <style>
+    .demo {
+      padding: 20px;
+    }
+  </style>
+  <style>
+    .box {
+      margin: 15px;
+      border: 1px solid #d9d9d9;
+      padding: 42px 20px 50px;
+      float: left;
+    }
+
+    .g-button {
+      margin-bottom: 8px;
+    }
+
+    h1, h3 {
+      margin-bottom: 16px;
+    }
+  </style>
+  <style>
+    .icon {
+      width: 1em; height: 1em;
     }
   </style>
 </head>
 <body>
 <div id="app">
-  您好, 请点击
-  <g-button></g-button>
+  <div class="demo-page">
+    <div class="box">
+      <g-button>button</g-button>
+      <div>
+        <h1>标准按钮</h1>
+        <g-button class="primary">主按钮</g-button>
+        <g-button>次按钮</g-button>
+        <g-button class="ghost">幽灵按钮</g-button>
+      </div>
+    </div>
+    <div class="box">
+      <h1>按钮尺寸</h1>
+      <g-button class="primary lg">大号按钮</g-button>
+      <g-button class="primary">中号按钮</g-button>
+      <g-button class="primary sm">小号按钮</g-button>
+    </div>
+    <div class="box">
+      <h1>图标按钮</h1>
+      <div>
+        <g-button icon="search" class="circle primary lg"></g-button>
+        <g-button icon="search" class=" primary lg">大按钮</g-button>
+        <g-button icon="search" class="circle primary "></g-button>
+        <g-button icon="search" class="primary ">中按钮</g-button>
+        <g-button icon="search" class="circle primary sm"></g-button>
+        <g-button icon="search" class="primary sm">小按钮</g-button>
+      </div>
+      <div>
+        <g-button icon="search" class="circle lg"></g-button>
+        <g-button icon="search" class=" lg">大按钮</g-button>
+        <g-button icon="search" class="circle "></g-button>
+        <g-button icon="search" class=" ">中按钮</g-button>
+        <g-button icon="search" class="circle sm"></g-button>
+        <g-button icon="search" class=" sm">小按钮</g-button>
+      </div>
+    </div>
+    <div class="box">
+      <h1>按钮状态</h1>
+      <div>
+        <g-button class="primary">主按钮</g-button>
+        <g-button class="primary disabled">主按钮(失效)</g-button>
+      </div>
+      <div>
+        <g-button>次按钮</g-button>
+        <g-button class="disabled">次按钮(失效)</g-button>
+      </div>
+      <div>
+        <g-button class="ghost">幽灵按钮</g-button>
+        <g-button class="ghost disabled">幽灵按钮(失效)</g-button>
+      </div>
+    </div>
+    <div class="box">
+      <h1>菜单按钮</h1>
+      <g-button>菜单按钮 icon-down</g-button>
+      <g-button>icon-down</g-button>
+    </div>
+    <div class="box">
+      <h1>加载中</h1>
+      <g-button>加载中(大)</g-button>
+      <g-button>加载中(默认)</g-button>
+      <g-button>加载中(小)</g-button>
+      <div>
+        <g-button>点击变加载</g-button>
+      </div>
+    </div>
+
+    <div class="box">
+      <h1>按钮组合</h1>
+      <h3>基本组合</h3>
+      <div>
+        <g-button>确定</g-button>
+        <g-button>取消</g-button>
+      </div>
+      <div>
+        <g-button>左</g-button>
+        <g-button>中</g-button>
+        <g-button>右</g-button>
+      </div>
+      <div>
+        <g-button>左</g-button>
+        <g-button>中</g-button>
+        <g-button>中</g-button>
+        <g-button>右</g-button>
+      </div>
+
+      <h3>带图标按钮组合</h3>
+      <div>
+        <g-button>icon-left 后退</g-button>
+        <g-button>icon-right 前进</g-button>
+      </div>
+      <div>
+        <g-button>cloud</g-button>
+        <g-button>download</g-button>
+      </div>
+
+      <h3>多个组合</h3>
+      <div>
+        <g-button>1</g-button>
+        <g-button>2</g-button>
+        <g-button>3</g-button>
+        <g-button>4</g-button>
+        <g-button>前进 icon-right</g-button>
+      </div>
+      <h3>尺寸</h3>
+      <div>
+        <g-button>大</g-button>
+        <g-button>大</g-button>
+        <g-button>大</g-button>
+      </div>
+      <div>
+        <g-button>默认</g-button>
+        <g-button>默认</g-button>
+        <g-button>默认</g-button>
+      </div>
+      <div>
+        <g-button>小</g-button>
+        <g-button>小</g-button>
+        <g-button>小</g-button>
+      </div>
+      <h3>带图标按钮组合</h3>
+      <div>
+        <g-button>icon-left 后退</g-button>
+        <g-button>icon-right 前进</g-button>
+      </div>
+      <div>
+        <g-button>cloud</g-button>
+        <g-button>download</g-button>
+      </div>
+      <h3>多个组合</h3>
+      <div>
+        <g-button>1</g-button>
+        <g-button>2</g-button>
+        <g-button>3</g-button>
+        <g-button>4</g-button>
+        <g-button>前进 icon-right</g-button>
+      </div>
+      <h3>尺寸</h3>
+      <div>
+        <g-button>大</g-button>
+        <g-button>大</g-button>
+        <g-button>大</g-button>
+      </div>
+      <div>
+        <g-button>默认</g-button>
+        <g-button>默认</g-button>
+        <g-button>默认</g-button>
+      </div>
+      <div>
+        <g-button>小</g-button>
+        <g-button>小</g-button>
+        <g-button>小</g-button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1039335_kkaerh5njt.js"></script>
 </body>
 </html>
