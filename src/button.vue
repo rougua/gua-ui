@@ -90,11 +90,13 @@
       background: $primary-button-background-color;
       svg { fill: white; }
       &:hover {
+        svg { fill: $primary-button-hover-color; }
         color: $primary-button-hover-color;
         border-color: $primary-button-hover-border-color;
         background: $primary-button-hover-background-color;
       }
       &:active {
+        svg { fill: $primary-button-active-color; }
         color: $primary-button-active-color;
         border-color: $primary-button-active-border-color;
         background: $primary-button-active-background-color;
