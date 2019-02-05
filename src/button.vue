@@ -12,7 +12,19 @@
 <script>
   export default {
     name: 'GuaUIButton',
-    props: ['icon', 'iconPosition']
+    props: {
+      icon: {},
+      iconPosition: {
+        type: String,
+        default: 'left',
+        validator(value) {
+          if (value !== 'left' && value !== 'right') {
+            return false
+          }
+          return true
+        }
+      }
+    }
   }
 </script>
 
