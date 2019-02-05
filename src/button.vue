@@ -1,5 +1,6 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
+    <g-icon class="loading" v-if="icon" name="loading"></g-icon>
     <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
     <div class="content">
       <slot></slot>
@@ -63,6 +64,11 @@
   $primary-button-active-background-color: #2baee9;
   $primary-button-active-border-color: #2baee9;
 
+  @keyframes spin {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+  }
+
   .g-button {
     box-sizing: border-box;
     transition: .3s cubic-bezier(.645, .045, .355, 1);
@@ -74,6 +80,7 @@
     &, &:active, &:focus {
       outline: none;
     }
+    .loading { animation: spin .3s infinite linear; }
     > .icon { order: 1; margin-right: .1em; }
     > .content { order: 2 }
     &.icon-right {
