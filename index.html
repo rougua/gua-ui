@@ -49,9 +49,18 @@
   <g-icon name="down"></g-icon>
   <div class="demo-page">
     <div class="box">
-      <g-button icon="left" >左</g-button>
-      <g-button icon="left" icon-position="left">左</g-button>
-      <g-button icon="right" icon-position="right">右</g-button>
+      <g-button :loading="true" icon="left">左</g-button>
+      <g-button :loading="true" icon="left" icon-position="left">左</g-button>
+      <g-button :loading="true" icon="right" icon-position="right">右</g-button>
+    </div>
+    <div class="box">
+      <h1>加载中</h1>
+      <g-button :loading="true" class="lg">加载中(大)</g-button>
+      <g-button :loading="true">加载中(默认)</g-button>
+      <g-button :loading="true" class="sm">加载中(小)</g-button>
+      <div>
+        <g-button @click="loading1 = !loading1" :loading="loading1">点击变加载</g-button>
+      </div>
     </div>
     <div class="box">
       <g-button>button</g-button>
@@ -107,15 +116,7 @@
       <g-button>菜单按钮 icon-down</g-button>
       <g-button>icon-down</g-button>
     </div>
-    <div class="box">
-      <h1>加载中</h1>
-      <g-button>加载中(大)</g-button>
-      <g-button>加载中(默认)</g-button>
-      <g-button>加载中(小)</g-button>
-      <div>
-        <g-button>点击变加载</g-button>
-      </div>
-    </div>
+
     <div class="box">
       <h1>按钮组合</h1>
       <h3>基本组合</h3>
