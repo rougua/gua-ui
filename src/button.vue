@@ -1,16 +1,18 @@
 <template>
-  <button class="g-button">
+  <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
     <svg v-if="icon" class="icon">
       <use :xlink:href="`#icon-${icon}`"></use>
     </svg>
-    <slot></slot>
+    <div class="content">
+      <slot></slot>
+    </div>
   </button>
 </template>
 
 <script>
   export default {
     name: 'GuaUIButton',
-    props: ['icon']
+    props: ['icon', 'iconPosition']
   }
 </script>
 
@@ -49,13 +51,20 @@
   .g-button {
     box-sizing: border-box;
     transition: .3s cubic-bezier(.645, .045, .355, 1);
-    &, &:active, &:focus {
-      outline: none;
-    }
     font-size: var(--font-size); cursor: pointer; padding: 3px 12px;
     line-height: 1.5; font: inherit; border-radius: $button-border-radius;
     color: $button-color; border: 1px solid $button-border-color; background: $button-background-color;
     text-align: center; vertical-align: middle;
+    display: inline-flex; justify-content: center; align-items: center;
+    &, &:active, &:focus {
+      outline: none;
+    }
+    > .icon { order: 1; margin-right: .1em; }
+    > .content { order: 2 }
+    &.icon-right {
+      > .icon { order: 2; margin-right: 0; margin-left: .1em; }
+      > .content { order: 1 }
+    }
     &.circle {
       width: 28px;
       height: 28px;
