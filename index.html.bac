@@ -46,6 +46,16 @@
 </head>
 <body>
 <div id="app">
+  <span class="dark">主色(深色)</span>
+  <span class="light">浅色</span>
+  <span class="gray">灰色(主色灰)</span>
+  <span class="blue">蓝色</span>
+  <span class="red">红色</span>
+  <span class="orange">橘色</span>
+  <span class="green">绿色</span>
+  <span class="grey">灰色(边框灰)</span>
+  <span class="white">白色</span>
+
   <g-icon name="down"></g-icon>
   <div class="demo-page">
     <div class="box">
@@ -207,7 +217,7 @@
   </div>
 </div>
 </div>
-<script src="./src/app.js"></script>
+<script src="src/main.js"></script>
 <script src="//at.alicdn.com/t/font_1039335_xrbg16vuxck.js"></script>
 </body>
 </html>
